@@ -23,9 +23,9 @@ html {
 	overflow:auto;
 	line-height:1.5;
 	background:#012929;
-	color:#019d9f;
+	color:#01babc;
 	position:relative;
-	padding:20px;
+	padding:30px;
 	text-shadow:0 1px 0 rgba(0,0,0,0.35), 0 2px 1px rgba(0,0,0,0.1);
 }
 body {
@@ -42,19 +42,26 @@ div {
 	vertical-align:middle;
 }
 ul, ol {
-	margin:0 auto 3em;
+	margin:0 auto 2em;
 	width:20em;
 }
 h1 {
 	width:10em;
 	text-align:center;
 	line-height:1.15;
-	margin:0 auto 2em;
+	margin:0 auto 1.25em;
 }
 p {
-	width:20em;
+	width:100%;
 	margin:0 auto 2em;
-	text-align:center;
+}
+hr {
+	width:15em;
+	height:1px;
+	border:0;
+	background:white;
+	opacity:.1;
+	margin:3em auto;
 }
 strong {
 	color:white;
@@ -87,4 +94,40 @@ li:after {
 }
 li:last-child:after {
 	content:'';
+}
+a {
+	display:block;
+	background:#019d9f;
+	color:white;
+	width:10em;
+	margin:0 auto 1em;
+	text-align:center;
+	text-decoration:none;
+	padding:.25em 0;
+	border-radius:20px;
+	box-shadow:0 -2px 0 rgba(0,0,0,0.2) inset;
+	border:1px solid #013a3b;
+}
+a:hover {
+	/*border-color:#013a3b;*/
+}
+a:active {
+	background:#017374;
+	padding:.3em 0 .2em;
+	box-shadow:0 1px 3px rgba(0,0,0,0.3) inset;
+	color:rgba(255,255,255,0.75);
+}
+a + a {
+	padding:0;
+	background:none;
+	border-radius:0;
+	box-shadow:none;
+	border:0;
+	margin:0 auto 2.5em;
+	font-size:80%;
+}
+@media screen and (min-width:30em) {
+	p {
+		width:25em;
+	}
 }
