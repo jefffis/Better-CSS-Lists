@@ -80,8 +80,8 @@ li:before {
 	content:attr(data-item);
 	position:absolute;
 	left:0;
-	top:.5em;
-	font-size:70%;
+	top:.2em;
+	font-size:80%;
 	color:white;
 }
 ol li:before {
