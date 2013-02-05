@@ -7,6 +7,21 @@
 	<title dir="ltr">Simple, Fancy List Item Styling</title>
 	<meta name="description" content="Get more control over your ordered and unordered lists without needing extra images or http requests." />
 	<link href="app.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+	<link rel="author" href="/humans.txt" />
+	<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-22790184-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' :'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+	</script>
 </head>
 <body>
 	<div>
@@ -31,7 +46,38 @@
 		<p>Using <strong>HTML5 Data Attributes &amp; CSS Pseudo Content</strong>, we can render out anything here as the list item marker. HTML character codes work beautifully, so do Unicode characters (if proper headers are sent). This is also great for appending commas or periods to each list item, as you see fit.</p>
 		<p>Works swimmingly in modern browsers, as well as IE8 and up. Also, this is naturally <strong>resolution independent</strong>, thus it&rsquo;ll look great on any screen.</p>
 		<a href="https://github.com/jefffis/Better-CSS-Lists" target="_blank">Get it on Github</a>
-		<a href="http://jefff.co/">or back to jefff.co</a>
+		<hr />
+		<p>It&rsquo;s very simple to use; just something like this will work for the markup:</p>
+<pre>
+&lt;ol&gt;
+  &lt;li&gt;Wes anderson cred vegam&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+  &lt;li data-item="&amp;hearts;"&gt;Wes anderson cred vegam&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>And for the CSS:</p>
+<pre>
+li {
+  list-style:none;
+  position:relative;
+  counter-increment:this; <em>/** name the counter **/</em>
+}
+li:before {
+  content:attr(data-item); <em>/** or whatever you name your data-attribute **/</em>
+  position:absolute;
+  left:0;
+  top:.2em;
+  font-size:80%;
+  color:white;
+  <em>/** this is arbitrary for my design, but you get the idea **/</em>
+}
+ol li:before {
+ content:'(' counter(this) ')'; <em>/** call the counter you named **/</em>
+}
+</pre>
+		<p>You&rsquo;ll need to tweak things here and there of course, but you get the concept.</p>
+		<a href="/" class="_">or back to jefff.co</a>
 	</div>
 </body>
 </html>

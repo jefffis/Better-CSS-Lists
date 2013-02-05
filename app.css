@@ -83,6 +83,7 @@ li:before {
 	top:.2em;
 	font-size:80%;
 	color:white;
+	-webkit-font-smoothing:subpixel-antialiased;
 }
 ol li:before {
 	content:'(' counter(this) ')';
@@ -97,7 +98,20 @@ li:after {
 li:last-child:after {
 	content:'';
 }
-a {
+pre {
+	width:100%;
+	padding:1em;
+	background:rgba(255,255,255,0.05);
+	margin:0 auto 2em;
+	font-size:90%;
+	-webkit-font-smoothing:subpixel-antialiased;
+}
+pre em {
+	font-style:normal;
+	opacity:.5;
+	color:yellow;
+}
+a:link, a:visited {
 	display:block;
 	background:#fd9814;
 	color:white;
@@ -121,7 +135,7 @@ a:active {
 	box-shadow:0 1px 3px rgba(0,0,0,0.3) inset;
 	color:rgba(255,255,255,0.75);
 }
-a + a {
+._:link, ._:visited {
 	padding:0;
 	background:none;
 	border-radius:0;
@@ -131,14 +145,14 @@ a + a {
 	font-size:80%;
 	text-shadow:0 1px 0 rgba(0,0,0,0.35), 0 2px 1px rgba(0,0,0,0.1);
 }
-a + a:active {
+._:active {
 	padding:0;
 	background:none;
 	color:white;
 	opacity:.6;
 }
 @media screen and (min-width:30em) {
-	p {
+	p, pre {
 		width:25em;
 	}
 	ul, ol {
